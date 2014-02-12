@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @exercise.name %>
+</p>
+
+<p>
+  <strong>Youtubelink:</strong>
+  <%= @exercise.YoutubeLink %>
+</p>
+
+<p>
+  <strong>Giflink:</strong>
+  <%= @exercise.GifLink %>
+</p>
+
+<p>
+  <strong>Instructions:</strong>
+  <%= @exercise.instructions %>
+</p>
+
+<p>
+  <strong>Muscles:</strong>
+  <%= @exercise.muscles %>
+</p>
+
+<p>
+  <strong>Massinstructions:</strong>
+  <%= @exercise.MassInstructions %>
+</p>
+
+<p>
+  <strong>Cutinstructions:</strong>
+  <%= @exercise.CutInstructions %>
+</p>
+
+<p>
+  <strong>Staminainstructions:</strong>
+  <%= @exercise.StaminaInstructions %>
+</p>
+
+<%= link_to 'Edit', edit_exercise_path(@exercise) %> |
+<%= link_to 'Back', exercises_path %>

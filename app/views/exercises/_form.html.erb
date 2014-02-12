@@ -1,0 +1,49 @@
+<%= form_for(@exercise) do |f| %>
+  <% if @exercise.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
+
+      <ul>
+      <% @exercise.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :YoutubeLink %><br>
+    <%= f.text_field :YoutubeLink %>
+  </div>
+  <div class="field">
+    <%= f.label :GifLink %><br>
+    <%= f.text_field :GifLink %>
+  </div>
+  <div class="field">
+    <%= f.label :instructions %><br>
+    <%= f.text_area :instructions %>
+  </div>
+  <div class="field">
+    <%= f.label :muscles %><br>
+    <%= f.text_field :muscles %>
+  </div>
+  <div class="field">
+    <%= f.label :MassInstructions %><br>
+    <%= f.text_area :MassInstructions %>
+  </div>
+  <div class="field">
+    <%= f.label :CutInstructions %><br>
+    <%= f.text_area :CutInstructions %>
+  </div>
+  <div class="field">
+    <%= f.label :StaminaInstructions %><br>
+    <%= f.text_area :StaminaInstructions %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
