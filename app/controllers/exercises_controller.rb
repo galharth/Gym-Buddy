@@ -15,6 +15,7 @@ class ExercisesController < ApplicationController
   # GET /exercises/new
   def new
     @exercise = Exercise.new
+    @exercisePlans = ExercisePlan.all
   end
 
   # GET /exercises/1/edit
@@ -25,6 +26,7 @@ class ExercisesController < ApplicationController
   # POST /exercises.json
   def create
     @exercise = Exercise.new(exercise_params)
+
 
     respond_to do |format|
       if @exercise.save
@@ -69,6 +71,6 @@ class ExercisesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exercise_params
-      params.require(:exercise).permit(:name, :YoutubeLink, :GifLink, :instructions, :muscles, :MassInstructions, :CutInstructions, :StaminaInstructions)
+      params.require(:exercise).permit(:name, :YoutubeLink, :GifLink, :instructions, :muscles, :MassInstructions, :CutInstructions, :StaminaInstructions,:exercisePlan_ids)
     end
 end

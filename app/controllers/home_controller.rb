@@ -1,5 +1,9 @@
 class HomeController < ApplicationController
   def index
-  	    @exercise_plans = ExercisePlan.all
+  	if user_signed_in?
+  	    @exercise_plans = current_user.exercisePlans
+  	 else
+  	 	@exercise_plans=nil
+  	 end
   end
 end

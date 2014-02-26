@@ -1,6 +1,8 @@
 <h1>QRGym</h1>
 <p>Welcome! </p>
-<h1>Listing exercise_plans</h1>
+
+  <% if user_signed_in? %>
+  <h1>Listing exercise_plans</h1>
 
 <table>
   <thead>
@@ -21,11 +23,46 @@
         <td><%= link_to 'Show', exercise_plan %></td>
         <td><%= link_to 'Edit', edit_exercise_plan_path(exercise_plan) %></td>
         <td><%= link_to 'Destroy', exercise_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      <tr>
+          <thead>
+    <tr>
+      <th>Exercises</th>
+    
+    </tr>
+  </thead>
+
+
+            <% exercise_plan.exercises.each do |exercise| %>
+                  <tr>
+
+        <td><%= exercise.name %></td>
+        <td><%= exercise.YoutubeLink %></td>
+        <td><%= exercise.GifLink %></td>
+        <td><%= exercise.instructions %></td>
+        <td><%= exercise.muscles %></td>
+        <td><%= exercise.MassInstructions %></td>
+        <td><%= exercise.CutInstructions %></td>
+        <td><%= exercise.StaminaInstructions %></td>
+        <td><%= link_to 'Show', exercise %></td>
+                        </tr>
+
+
+
+    <% end %>
+
       </tr>
+
     <% end %>
   </tbody>
 </table>
 
 <br>
-
 <%= link_to 'New Exercise plan', new_exercise_plan_path %>
+
+  <% else %>
+<p>Please Sign Up or Sign In</p>
+  <% end %>
+</div>
+
+

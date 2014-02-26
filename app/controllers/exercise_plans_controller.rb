@@ -4,7 +4,7 @@ class ExercisePlansController < ApplicationController
   # GET /exercise_plans
   # GET /exercise_plans.json
   def index
-    @exercise_plans = ExercisePlan.all
+    @exercise_plans = current_user.exercisePlans
   end
 
   # GET /exercise_plans/1
@@ -69,6 +69,6 @@ class ExercisePlansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exercise_plan_params
-      params.require(:exercise_plan).permit(:name, :type)
+      params.require(:exercise_plan).permit(:name, :type,:user_ids)
     end
 end
