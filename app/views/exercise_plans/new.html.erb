@@ -1,5 +1,28 @@
 <h1>New exercise_plan</h1>
 
-<%= render 'form' %>
+<%= form_tag("/exercise_plans") do %>
+  <%= label_tag(:age, "Age:") %>
+  <%= select_tag "Age", options_for_select(15..80) %>
+    <%= label_tag(:height, "Height(meters):") %>
+  <%= select_tag "Height", options_for_select((1.0..2.0).step(0.01)) %>
+
+  <%= label_tag(:weight, "Weight(kg):") %>
+  <%= select_tag "Weight", options_for_select(30..200) %>
+
+    <%= label_tag(:gender, "Gender:") %>
+      <%= radio_button_tag 'gender', 'male' %>
+
+        <%= label_tag(:male, "Male") %>
+
+           <%= radio_button_tag 'gender', 'female' %>
+
+          <%= label_tag(:male, "Female") %>
+
+
+
+
+
+  <%= submit_tag("Submit") %>
+<% end %>
 
 <%= link_to 'Back', exercise_plans_path %>
