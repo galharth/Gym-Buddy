@@ -2,8 +2,9 @@
 <h1>Choose muscle group</h1>
 
 <ul class="list-group">
+  <% if current_user.admin %>
     <li class="list-group-item" >   <strong><%= link_to 'New Exercise', new_exercise_path %></strong>   </li>
-
+<% end %>
 
 
   <% @musclegroups.each do |musclegroup| %>
