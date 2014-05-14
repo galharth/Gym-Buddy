@@ -4,7 +4,9 @@ class ExercisesController < ApplicationController
   # GET /exercises
   # GET /exercises.json
   def index
+    if params[:search]
     @exercises = Exercise.where("name like ?", "%#{params[:search]}%")
+    end
     @musclegroups=["Chest","Back","Legs"]
 
   end
