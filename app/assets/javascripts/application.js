@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+// Loads all Bootstrap javascripts
+//= require bootstrap
+
+$('.nav li a').on('click', function() {
+    $(this).parent().parent().find('.active').removeClass('active');
+    $(this).parent().addClass('active');
+});
+

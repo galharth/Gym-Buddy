@@ -1,9 +1,11 @@
 QRGym::Application.routes.draw do
   resources :exercise_plans
+  resources :exercise_plans_users
 
   get "home/index"
   devise_for :users
   resources :exercises
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

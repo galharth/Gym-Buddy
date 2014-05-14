@@ -4,7 +4,9 @@ class ExercisesController < ApplicationController
   # GET /exercises
   # GET /exercises.json
   def index
-    @exercises = Exercise.all
+    @exercises = Exercise.where("name like ?", "%#{params[:search]}%")
+    @musclegroups=["Chest","Back","Legs"]
+
   end
 
   # GET /exercises/1
@@ -20,6 +22,7 @@ class ExercisesController < ApplicationController
 
   # GET /exercises/1/edit
   def edit
+    @exercisePlans = ExercisePlan.all
   end
 
   # POST /exercises
@@ -69,8 +72,9 @@ class ExercisesController < ApplicationController
       @exercise = Exercise.find(params[:id])
     end
 
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def exercise_params
-      params.require(:exercise).permit(:name, :YoutubeLink, :GifLink, :instructions, :muscles, :MassInstructions, :CutInstructions, :StaminaInstructions,:exercisePlan_ids)
+      params.require(:exercise).permit(:name, :YoutubeLink, :GifLink, :instructions, :muscles, :MassInstructions, :CutInstructions, :StaminaInstructions,:exercisePlan_ids,:musclegroup)
     end
 end

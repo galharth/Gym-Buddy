@@ -5,21 +5,60 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 
-<div id="user_nav">
-  <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>. Not you?
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<div class="container">
+<nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">QRGym</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="<%= is_active?('/') %>"><a href="/">Home</a></li>
+        <li class="<%= is_active?('/exercises') %>"><a href="/exercises">Exercises</a></li>
+      </ul>
+              <%= form_tag(exercises_path, :method => "get", id: "search-form", :class=>"navbar-form navbar-left",:role=>"search") do %>
+        <div class="form-group">
+  <%= text_field_tag :search, params[:search], placeholder: "Search Exercises",:class=> "form-control"%>
+        </div>
+  <%= submit_tag "Submit", :class=>"btn btn-default",:name => nil %>
+<% end %>
+
+      <ul class="nav navbar-nav navbar-right">
+         <% if user_signed_in? %>
+    <li>
+ <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
   <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+    <li><%= link_to "Log in", new_user_session_path %></li><li><%= link_to "Sign up", new_user_registration_path %></li>
   <% end %>
-</div>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>
+
 
 <%= yield %>
+
+
+
+
+      <div class="footer">
+        <p>&copy; QRGym 2014</p>
+      </div>
+
+
+</div>
 
 </body>
 </html>

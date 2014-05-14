@@ -1,14 +1,85 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @exercise_plan.name %>
-</p>
+<h3>Day 1: Chest</h3>
 
-<p>
-  <strong>Type:</strong>
-  <%= @exercise_plan.type %>
-</p>
 
-<%= link_to 'Edit', edit_exercise_plan_path(@exercise_plan) %> |
-<%= link_to 'Back', exercise_plans_path %>
+<ul class="list-group">
+
+
+
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+</li>
+
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+</li>
+
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+</li>
+
+
+
+</ul>
+
+
+<h3>Day 2: Back</h3>
+
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+</li>
+
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+</li>
+
+<h3>Day 3: Legs</h3>
+
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+</li>
+
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+</li>
+
+<h3>Day 4: Arms</h3>
+
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+</li>
+
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+</li>
+
+<h3>Day 5: Rest</h3>
+
+
+
+
+<br/>
+
+<%= link_to 'Back', home_index_path %>

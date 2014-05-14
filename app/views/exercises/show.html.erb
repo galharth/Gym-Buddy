@@ -1,44 +1,24 @@
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @exercise.name %>
-</p>
+<h1>
+<%= @exercise.name %>
+</h1>
+      <div class="row">
+        <div><%= raw(@exercise.YoutubeLink) %></div>
+        <div style="padding-top:160px;"><%= image_tag("#{@exercise.GifLink}", :alt => "#{@exercise.name}", :class=>"col-xs-12 col-sm-6 col-lg-8") %>
+</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-lg-8"><h3>Instructions:</h3>
+<p><%= raw(@exercise.instructions) %></p>
+</div>
+        <div class="col-xs-12 col-sm-6 col-lg-8"><h3>Main muscles involved:</h3><%= image_tag("#{@exercise.muscles}") %>
+</div>
+      </div>
 
-<p>
-  <strong>Youtubelink:</strong>
-  <%= @exercise.YoutubeLink %>
-</p>
 
-<p>
-  <strong>Giflink:</strong>
-  <%= @exercise.GifLink %>
-</p>
 
-<p>
-  <strong>Instructions:</strong>
-  <%= @exercise.instructions %>
-</p>
-
-<p>
-  <strong>Muscles:</strong>
-  <%= @exercise.muscles %>
-</p>
-
-<p>
-  <strong>Massinstructions:</strong>
-  <%= @exercise.MassInstructions %>
-</p>
-
-<p>
-  <strong>Cutinstructions:</strong>
-  <%= @exercise.CutInstructions %>
-</p>
-
-<p>
-  <strong>Staminainstructions:</strong>
-  <%= @exercise.StaminaInstructions %>
-</p>
 
 <%= link_to 'Edit', edit_exercise_path(@exercise) %> |
 <%= link_to 'Back', exercises_path %>

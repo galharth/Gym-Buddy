@@ -24,15 +24,15 @@ class ExercisePlansController < ApplicationController
   # POST /exercise_plans
   # POST /exercise_plans.json
   def create
-    i=get_exercise_plan_id(params[:weight],params[:height])
+    i=get_exercise_plan_id(params[:Weight],params[:Height])
       @exercise_plan = ExercisePlansUsers.new(:user_id => current_user.id,:exercise_plan_id=>i)
 
 
 
     respond_to do |format|
       if @exercise_plan.save
-        format.html { redirect_to "/exercise_plans/#{i}", notice: 'Exercise plan was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @exercise_plan }
+        format.html { redirect_to home_index_path, notice: 'Exercise plan was successfully created.' }
+        format.json { head :no_content }
       else
         format.html { render action: 'new' }
         format.json { render json: @exercise_plan.errors, status: :unprocessable_entity }
@@ -66,12 +66,15 @@ class ExercisePlansController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def get_exercise_plan_id(wieght,height)
-        bmi = ( wieght.to_f / ( height.to_f  * height.to_f ) )
-        if bmi <= 18.5
+    def get_exercise_plan_id(weight,height)
+        w = weight.to_f
+        h = height.to_f
+        h = h*h
+        bmi = w/h
+        if bmi < 18.5
           return 1
         else
-          return 3
+          return 7
         end
     end
 
