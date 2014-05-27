@@ -10,20 +10,26 @@
 
 
 
-  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %> <span style="float:right;">5 sets of 15, 10, 8, 8, 6 reps
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %> <span style="float:right;">5 sets of 8-12 reps
 </span>
 </li>
 
-  <li class="list-group-item">      <%= link_to "Squat", Exercise.find_by_name("Squat") %> <span style="float:right;">5 sets of 15, 10, 8, 8, 6 reps
+  <li class="list-group-item">      <%= link_to "Barbell Decline Bench Press", Exercise.find_by_name("Barbell Decline Bench Press") %> <span style="float:right;">
+    3 sets of 8-10 reps
 </span>
 </li>
 
 
-  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+  <li class="list-group-item">      <%= link_to "Lever Pec Deck Fly", Exercise.find_by_name("Lever Pec Deck Fly") %>
+    <span style="float:right;">
+3 sets of 8-10 reps
+</span>
 </li>
 
 
-  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+  <li class="list-group-item">      <%= link_to "Barbell Incline Bench Press", Exercise.find_by_name("Barbell Incline Bench Press") %><span style="float:right;">
+3 sets of 8-10 reps
+</span>
 </li>
 
 
@@ -37,17 +43,20 @@
 <h3>Day 3: Back</h3>
 
 
-  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+  <li class="list-group-item">      <%= link_to "Barbell Deadlift", Exercise.find_by_name("Barbell Deadlift") %>
+<span style="float:right;">5 sets of 10-15 reps</span>
 </li>
 
-
-  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+<li class="list-group-item">      <%= link_to "Chin-up", Exercise.find_by_name("Chin-up") %>
+<span style="float:right;">5 sets of 5-10</span>
 </li>
 
-  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+  <li class="list-group-item">      <%= link_to "Barbell Bent-over Row", Exercise.find_by_name("Barbell Bent-over Row") %>
+<span style="float:right;">3 sets of 8-12</span>
 </li>
 
-  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+  
+
 </li>
 
 <h3>Day 4: Rest</h3>
@@ -56,46 +65,397 @@
 
 <h3>Day 5: Legs</h3>
 
-  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+  <li class="list-group-item">      <%= link_to "Barbell Squat", Exercise.find_by_name("Barbell Squat") %>
+<span style="float:right;">5 sets of 10-15 reps</span>
 </li>
 
 
-  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+  <li class="list-group-item">      <%= link_to "Lever Seated Leg Curl", Exercise.find_by_name("Lever Seated Leg Curl") %>
+<span style="float:right;">3 sets of 8-10 reps</span>
 </li>
 
-  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+  <li class="list-group-item">      <%= link_to "Lever Leg Extension", Exercise.find_by_name("Lever Leg Extension") %>
+<span style="float:right;">3 sets of 8-10 reps</span>
+  </li>
+
+   <li class="list-group-item">      <%= link_to "Barbell Deadlift", Exercise.find_by_name("Barbell Deadlift") %>
+<span style="float:right;">3 sets of 6-8 reps</span>
 </li>
 
-  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+
+</li>
+
+ 
 </li>
 
 <h3>Day 6: Rest</h3>
 
-<h3>Day 7: Deltoids </h3>
+<h3>Day 7: Shoulders and Arms</h3>
 
-  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+  <li class="list-group-item">      <%= link_to "Barbell Curl", Exercise.find_by_name("Barbell Curl") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
 </li>
 
 
-  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+  <li class="list-group-item">      <%= link_to "Skull Crusher", Exercise.find_by_name("Skull Crusher") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
 </li>
 
-  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+  <li class="list-group-item">      <%= link_to "Dumbbell Lateral Raise", Exercise.find_by_name("Dumbbell Lateral Raise") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
 </li>
 
-  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+  <li class="list-group-item">      <%= link_to "Chest Dip", Exercise.find_by_name("Chest Dip") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
+</li>
+
+    <li class="list-group-item">      <%= link_to "Barbell Military Press", Exercise.find_by_name("Barbell Military Press") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
 </li>
 
 
 <% elsif @exercise_plan.type == "Cutting" %>
 <!-- cutting plan -->
 
-	
+	<h3>Day 1: Chest</h3>
+<!-- mass plan -->
+
+
+<ul class="list-group">
+
+
+
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %> <span style="float:right;">5 sets of 8-12 reps
+</span>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Barbell Decline Bench Press", Exercise.find_by_name("Barbell Decline Bench Press") %> <span style="float:right;">
+    3 sets of 8-10 reps
+</span>
+</li>
+
+
+  <li class="list-group-item">      <%= link_to "Lever Pec Deck Fly", Exercise.find_by_name("Lever Pec Deck Fly") %>
+    <span style="float:right;">
+3 sets of 8-10 reps
+</span>
+</li>
+
+
+  <li class="list-group-item">      <%= link_to "Barbell Incline Bench Press", Exercise.find_by_name("Barbell Incline Bench Press") %><span style="float:right;">
+3 sets of 8-10 reps
+</span>
+</li>
+
+
+
+</ul>
+
+
+<h3>Day 2: Rest</h3>
+
+
+<h3>Day 3: Back</h3>
+
+
+  <li class="list-group-item">      <%= link_to "Barbell Deadlift", Exercise.find_by_name("Barbell Deadlift") %>
+<span style="float:right;">5 sets of 10-15 reps</span>
+</li>
+
+<li class="list-group-item">      <%= link_to "Chin-up", Exercise.find_by_name("Chin-up") %>
+<span style="float:right;">5 sets of 5-10</span>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Barbell Bent-over Row", Exercise.find_by_name("Barbell Bent-over Row") %>
+<span style="float:right;">3 sets of 8-12</span>
+</li>
+
+  
+
+</li>
+
+<h3>Day 4: Rest</h3>
+
+
+
+<h3>Day 5: Legs</h3>
+
+  <li class="list-group-item">      <%= link_to "Barbell Squat", Exercise.find_by_name("Barbell Squat") %>
+<span style="float:right;">5 sets of 10-15 reps</span>
+</li>
+
+
+  <li class="list-group-item">      <%= link_to "Lever Seated Leg Curl", Exercise.find_by_name("Lever Seated Leg Curl") %>
+<span style="float:right;">3 sets of 8-10 reps</span>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Lever Leg Extension", Exercise.find_by_name("Lever Leg Extension") %>
+<span style="float:right;">3 sets of 8-10 reps</span>
+  </li>
+
+   <li class="list-group-item">      <%= link_to "Barbell Deadlift", Exercise.find_by_name("Barbell Deadlift") %>
+<span style="float:right;">3 sets of 6-8 reps</span>
+</li>
+
+
+</li>
+
+ 
+</li>
+
+<h3>Day 6: Rest</h3>
+
+<h3>Day 7: Shoulders and Arms</h3>
+
+  <li class="list-group-item">      <%= link_to "Barbell Curl", Exercise.find_by_name("Barbell Curl") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
+</li>
+
+
+  <li class="list-group-item">      <%= link_to "Skull Crusher", Exercise.find_by_name("Skull Crusher") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Dumbbell Lateral Raise", Exercise.find_by_name("Dumbbell Lateral Raise") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Chest Dip", Exercise.find_by_name("Chest Dip") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
+</li>
+
+    <li class="list-group-item">      <%= link_to "Barbell Military Press", Exercise.find_by_name("Barbell Military Press") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
+</li>
+
 <% elsif  @exercise_plan.type == "Girls" %>
 <!-- girls plan -->
+<h3>Day 1: Chest</h3>
+<!-- mass plan -->
+
+
+<ul class="list-group">
+
+
+
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %> <span style="float:right;">5 sets of 8-12 reps
+</span>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Barbell Decline Bench Press", Exercise.find_by_name("Barbell Decline Bench Press") %> <span style="float:right;">
+    3 sets of 8-10 reps
+</span>
+</li>
+
+
+  <li class="list-group-item">      <%= link_to "Lever Pec Deck Fly", Exercise.find_by_name("Lever Pec Deck Fly") %>
+    <span style="float:right;">
+3 sets of 8-10 reps
+</span>
+</li>
+
+
+  <li class="list-group-item">      <%= link_to "Barbell Incline Bench Press", Exercise.find_by_name("Barbell Incline Bench Press") %><span style="float:right;">
+3 sets of 8-10 reps
+</span>
+</li>
+
+
+
+</ul>
+
+
+<h3>Day 2: Rest</h3>
+
+
+<h3>Day 3: Back</h3>
+
+
+  <li class="list-group-item">      <%= link_to "Barbell Deadlift", Exercise.find_by_name("Barbell Deadlift") %>
+<span style="float:right;">5 sets of 10-15 reps</span>
+</li>
+
+<li class="list-group-item">      <%= link_to "Chin-up", Exercise.find_by_name("Chin-up") %>
+<span style="float:right;">5 sets of 5-10</span>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Barbell Bent-over Row", Exercise.find_by_name("Barbell Bent-over Row") %>
+<span style="float:right;">3 sets of 8-12</span>
+</li>
+
+  
+
+</li>
+
+<h3>Day 4: Rest</h3>
+
+
+
+<h3>Day 5: Legs</h3>
+
+  <li class="list-group-item">      <%= link_to "Barbell Squat", Exercise.find_by_name("Barbell Squat") %>
+<span style="float:right;">5 sets of 10-15 reps</span>
+</li>
+
+
+  <li class="list-group-item">      <%= link_to "Lever Seated Leg Curl", Exercise.find_by_name("Lever Seated Leg Curl") %>
+<span style="float:right;">3 sets of 8-10 reps</span>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Lever Leg Extension", Exercise.find_by_name("Lever Leg Extension") %>
+<span style="float:right;">3 sets of 8-10 reps</span>
+  </li>
+
+   <li class="list-group-item">      <%= link_to "Barbell Deadlift", Exercise.find_by_name("Barbell Deadlift") %>
+<span style="float:right;">3 sets of 6-8 reps</span>
+</li>
+
+
+</li>
+
+ 
+</li>
+
+<h3>Day 6: Rest</h3>
+
+<h3>Day 7: Shoulders and Arms</h3>
+
+  <li class="list-group-item">      <%= link_to "Barbell Curl", Exercise.find_by_name("Barbell Curl") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
+</li>
+
+
+  <li class="list-group-item">      <%= link_to "Skull Crusher", Exercise.find_by_name("Skull Crusher") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Dumbbell Lateral Raise", Exercise.find_by_name("Dumbbell Lateral Raise") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Chest Dip", Exercise.find_by_name("Chest Dip") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
+</li>
+
+    <li class="list-group-item">      <%= link_to "Barbell Military Press", Exercise.find_by_name("Barbell Military Press") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
+</li>
 
 <% else%>
 <!-- old people plan -->
+<h3>Day 1: Chest</h3>
+<!-- mass plan -->
+
+
+<ul class="list-group">
+
+
+
+
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %> <span style="float:right;">5 sets of 8-12 reps
+</span>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Barbell Decline Bench Press", Exercise.find_by_name("Barbell Decline Bench Press") %> <span style="float:right;">
+    3 sets of 8-10 reps
+</span>
+</li>
+
+
+  <li class="list-group-item">      <%= link_to "Lever Pec Deck Fly", Exercise.find_by_name("Lever Pec Deck Fly") %>
+    <span style="float:right;">
+3 sets of 8-10 reps
+</span>
+</li>
+
+
+  <li class="list-group-item">      <%= link_to "Barbell Incline Bench Press", Exercise.find_by_name("Barbell Incline Bench Press") %><span style="float:right;">
+3 sets of 8-10 reps
+</span>
+</li>
+
+
+
+</ul>
+
+
+<h3>Day 2: Rest</h3>
+
+
+<h3>Day 3: Back</h3>
+
+
+  <li class="list-group-item">      <%= link_to "Barbell Deadlift", Exercise.find_by_name("Barbell Deadlift") %>
+<span style="float:right;">5 sets of 10-15 reps</span>
+</li>
+
+<li class="list-group-item">      <%= link_to "Chin-up", Exercise.find_by_name("Chin-up") %>
+<span style="float:right;">5 sets of 5-10</span>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Barbell Bent-over Row", Exercise.find_by_name("Barbell Bent-over Row") %>
+<span style="float:right;">3 sets of 8-12</span>
+</li>
+
+  
+
+</li>
+
+<h3>Day 4: Rest</h3>
+
+
+
+<h3>Day 5: Legs</h3>
+
+  <li class="list-group-item">      <%= link_to "Barbell Squat", Exercise.find_by_name("Barbell Squat") %>
+<span style="float:right;">5 sets of 10-15 reps</span>
+</li>
+
+
+  <li class="list-group-item">      <%= link_to "Lever Seated Leg Curl", Exercise.find_by_name("Lever Seated Leg Curl") %>
+<span style="float:right;">3 sets of 8-10 reps</span>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Lever Leg Extension", Exercise.find_by_name("Lever Leg Extension") %>
+<span style="float:right;">3 sets of 8-10 reps</span>
+  </li>
+
+   <li class="list-group-item">      <%= link_to "Barbell Deadlift", Exercise.find_by_name("Barbell Deadlift") %>
+<span style="float:right;">3 sets of 6-8 reps</span>
+</li>
+
+
+</li>
+
+ 
+</li>
+
+<h3>Day 6: Rest</h3>
+
+<h3>Day 7: Shoulders and Arms</h3>
+
+  <li class="list-group-item">      <%= link_to "Barbell Curl", Exercise.find_by_name("Barbell Curl") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
+</li>
+
+
+  <li class="list-group-item">      <%= link_to "Skull Crusher", Exercise.find_by_name("Skull Crusher") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Dumbbell Lateral Raise", Exercise.find_by_name("Dumbbell Lateral Raise") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
+</li>
+
+  <li class="list-group-item">      <%= link_to "Chest Dip", Exercise.find_by_name("Chest Dip") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
+</li>
+
+    <li class="list-group-item">      <%= link_to "Barbell Military Press", Exercise.find_by_name("Barbell Military Press") %>
+<span style="float:right;">3 sets of 8-12 reps</span>
+</li>
 
 <% end %>
 
