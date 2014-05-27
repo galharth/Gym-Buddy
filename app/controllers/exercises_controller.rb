@@ -1,38 +1,20 @@
 class ExercisesController < ApplicationController
   before_action :set_exercise, only: [:show, :edit, :update, :destroy]
-
-  # GET /exercises
-  # GET /exercises.json
   def index
     if params[:search]
     @exercises = Exercise.where("name like ?", "%#{params[:search]}%")
     end
     @musclegroups=["Chest","Back","Legs"]
-
   end
-
-  # GET /exercises/1
-  # GET /exercises/1.json
   def show
   end
-
-  # GET /exercises/new
   def new
     @exercise = Exercise.new
-    @exercisePlans = ExercisePlan.all
   end
-
-  # GET /exercises/1/edit
   def edit
-    @exercisePlans = ExercisePlan.all
   end
-
-  # POST /exercises
-  # POST /exercises.json
   def create
     @exercise = Exercise.new(exercise_params)
-
-
     respond_to do |format|
       if @exercise.save
         format.html { redirect_to @exercise, notice: 'Exercise was successfully created.' }
@@ -43,9 +25,6 @@ class ExercisesController < ApplicationController
       end
     end
   end
-
-  # PATCH/PUT /exercises/1
-  # PATCH/PUT /exercises/1.json
   def update
     respond_to do |format|
       if @exercise.update(exercise_params)
@@ -57,9 +36,6 @@ class ExercisesController < ApplicationController
       end
     end
   end
-
-  # DELETE /exercises/1
-  # DELETE /exercises/1.json
   def destroy
     @exercise.destroy
     respond_to do |format|
@@ -67,16 +43,12 @@ class ExercisesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_exercise
       @exercise = Exercise.find(params[:id])
     end
-
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def exercise_params
-      params.require(:exercise).permit(:name, :YoutubeLink, :GifLink, :instructions, :muscles, :MassInstructions, :CutInstructions, :StaminaInstructions,:exercisePlan_ids,:musclegroup)
+      def exercise_params
+      params.require(:exercise).permit(:name, :YoutubeLink, :GifLink, :instructions, :muscles, :MassInstructions, :CutInstructions,
+       :StaminaInstructions,:exercisePlan_ids,:musclegroup)
     end
 end

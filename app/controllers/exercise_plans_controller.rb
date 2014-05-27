@@ -24,7 +24,7 @@ class ExercisePlansController < ApplicationController
   # POST /exercise_plans
   # POST /exercise_plans.json
   def create
-    i=get_exercise_plan_id(params[:Weight],params[:Height])
+    i=get_exercise_plan_id(params[:Weight],params[:Height], params[:Age],params[:gender])
       @exercise_plan = ExercisePlansUsers.new(:user_id => current_user.id,:exercise_plan_id=>i)
 
 
@@ -66,15 +66,19 @@ class ExercisePlansController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def get_exercise_plan_id(weight,height)
+    def get_exercise_plan_id(weight,height,age,gender)
         w = weight.to_f
         h = height.to_f
         h = h*h
         bmi = w/h
-        if bmi < 18.5
-          return 1
+        if bmi < 18.5 && age.to_i < 50 && gender == "Male"
+          return ExercisePlan.find_by_type("Mass").id
+        elsif bmi > 18.5 && age.to_i < 50 && gender == "Male"
+          return ExercisePlan.find_by_type("Cutting").id
+        elsif gender == "Female"
+          return ExercisePlan.find_by_type("Girls").id
         else
-          return 7
+          return ExercisePlan.find_by_type("Old people").id
         end
     end
 

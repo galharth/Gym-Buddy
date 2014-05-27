@@ -2,63 +2,42 @@
 <% if user_signed_in? %>
 <h1>Exercise plans</h1>
 <p id="notice"><%= notice %></p>
-
-
 <ul class="list-group">
-
-
-
     <% @exercise_plans.each do |exercise_plan| %>
-
   <li class="list-group-item">      <%= link_to exercise_plan.name, exercise_plan%>
-    <%= link_to raw("<span style=\"float:right;\" class=\"glyphicon glyphicon-remove\"></span>"), exercise_plans_users(exercise_plan.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to raw("<span style=\"float:right;\" class=\"glyphicon glyphicon-remove\"></span>"),
+     exercise_plans_users(exercise_plan.id), method: :delete, data: { confirm: 'Are you sure?' } %>
 </li>
-
  <% end %>
 <% if @exercise_plans.size <2  %>
    <li class="list-group-item">     <a class="btn btn-lg btn-success" href="/exercise_plans/new" role="button">Create new exercise plan</a>
 </li>
 <% end%>
-
-
 </ul>
-
-
-
-
-
   <% else %>
         <div class="jumbotron">
         <h1>Welcome to QRGym!</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p class="lead">QRGym, is a digital application, designed for enriching the experience of training in the gym. 
+With QRGym you can view guides and explanations about specific exercises, and create custom-made training programs, according to your own goals and objectives.
+</p>
         <p><a class="btn btn-lg btn-success" href="/users/sign_up" role="button">Sign up today</a></p>
-
       </div>
-
       <div class="row marketing">
-        <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+        <div class="col-lg-12">
+          <h4>Create training programs</h4>
+          <p>Trainees can create custom-made training programs, according to your own goals and objectives just by inserting their age, height, weight and gender.
+</p>
 
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+          <h4>Learn about gym exercises</h4>
+          <p>Trainees can view guides and explanations about specific exercises they have in their gym by scanning the QRGym barcode which is located on the exercise machine. 
+</p>
 
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+          <h4>Add new exercises</h4>
+          <p>Trainers can add new exercises to QRGym database.
+</p>
         </div>
 
-        <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+      </div> <% end %>
 
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
-      </div>
-
-  <% end %>
 
 

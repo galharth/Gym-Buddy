@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<% if @exercise_plan.type == "Mass" %>
 <h3>Day 1: Chest</h3>
+<!-- mass plan -->
 
 
 <ul class="list-group">
@@ -8,10 +10,12 @@
 
 
 
-  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %> <span style="float:right;">5 sets of 15, 10, 8, 8, 6 reps
+</span>
 </li>
 
-  <li class="list-group-item">      <%= link_to "Bench Press", Exercise.find_by_name("Bench Press") %>
+  <li class="list-group-item">      <%= link_to "Squat", Exercise.find_by_name("Squat") %> <span style="float:right;">5 sets of 15, 10, 8, 8, 6 reps
+</span>
 </li>
 
 
@@ -77,9 +81,20 @@
 
 <h3>Day 5: Rest</h3>
 
+<% elsif @exercise_plan.type == "Cutting" %>
+<!-- cutting plan -->
 
+	
+<% elsif  @exercise_plan.type == "Girls" %>
+<!-- girls plan -->
 
+<% else%>
+<!-- old people plan -->
+
+<% end %>
 
 <br/>
 
 <%= link_to 'Back', home_index_path %>
+
+
