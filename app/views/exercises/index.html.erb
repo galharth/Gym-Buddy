@@ -5,60 +5,41 @@
   <% if current_user && current_user.admin %>
     <li class="list-group-item" >   <strong><%= link_to 'New Exercise', new_exercise_path %></strong>   </li>
 <% end %>
-
-
   <% @musclegroups.each do |musclegroup| %>
-
-  <li class="list-group-item">      <%= link_to musclegroup, exercises_path(:musclegroup =>musclegroup) %>    <span class="badge">  <%= exercisesmuscle(musclegroup).size %>
+  <li class="list-group-item">      <%= link_to musclegroup, exercises_path(:musclegroup =>musclegroup) %>    <span class="badge">  
+    <%= exercisesmuscle(musclegroup).size %>
 </span>
-
 </li>
-
  <% end %>
-
 </ul>
-
 <% elsif params[:musclegroup] %>
-
 <ul class="list-group">
-
-
-
   <% exercisesmuscle(params[:musclegroup]).each do |exercise| %>
-
   <li class="list-group-item">      <%= link_to exercise.name, exercise %>
 </li>
-
  <% end %>
-
  </ul>
-
 <%= link_to 'Back', exercises_path %>
-
-
 <% else %>
-
 <ul class="list-group">
-
-
-
   <% @exercises.each do |exercise| %>
-
   <li class="list-group-item">      <%= link_to exercise.name, exercise %>
-
 </li>
-
-
-
  <% end %>
-
  </ul>
-
 <br/>
-
 <%= link_to 'Back', exercises_path %>
-
 <% end %>
+
+
+
+
+
+
+
+
+
+
 
 
 
