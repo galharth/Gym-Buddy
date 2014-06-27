@@ -4,7 +4,7 @@ class ExercisesController < ApplicationController
     if params[:search]
     @exercises = Exercise.where("name like ?", "%#{params[:search]}%")
     end
-    @musclegroups=["Chest","Back","Legs","Shoulders","Arms"]
+    @musclegroups=["חזה","גב","רגליים","כתפיים","ידיים"]
   end
   def show
   end
